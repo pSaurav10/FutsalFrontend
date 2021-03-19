@@ -16,12 +16,11 @@ class Header extends Component {
                     <nav class="nav-menu d-none d-lg-block">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Futsals</a></li>
-                            <li><a href="#portfolio">Events</a></li>
-                            <li><a href="#team">Community</a></li>
+                            <li><a href="">Futsals</a></li>
+                            <li><a href="">Events</a></li>
+                            <li><a href="">Community</a></li>
 
-                            <li class="get-started"><a href="#about">Sign Up</a></li>
+                            <li class="get-started"><a href="">Login</a></li>
                         </ul>
                     </nav>
                     {/* <!-- .nav-menu --> */}
