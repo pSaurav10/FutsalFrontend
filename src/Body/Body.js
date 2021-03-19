@@ -1,10 +1,6 @@
 import { Component,state } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
-import Home from "./Home";
-import Register from './Register';
-import Login from './Login';
 import Hero from './Hero';
+import About from './About';
 import axios from 'axios';
 
 class Body extends Component {
@@ -25,10 +21,11 @@ class Body extends Component {
     }
     render() {
         return (
-            <Hero></Hero>
-                
-                
             
+                <div>
+                    <Hero></Hero>
+                    <About></About>
+                </div>
         )
     }
 }

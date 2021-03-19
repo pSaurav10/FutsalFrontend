@@ -1,5 +1,18 @@
 !(function($) {
-  "use strict";
+  'use strict';
+
+  // Init AOS
+  function aos_init() {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
+  }
+  $(window).on('load', function() {
+    aos_init();
+  });
 
   var fullHeight = function () {
 
@@ -14,14 +27,14 @@
   // Smooth scroll for the navigation menu and links with .scrollto classes
   var scrolltoOffset = $('#header').outerHeight() - 1;
   $(document).on('click', '.nav-menu a, .mobile-nav a, .scrollto', function(e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && window.location.hostname === this.hostname) {
       var target = $(this.hash);
       if (target.length) {
         e.preventDefault();
 
         var scrollto = target.offset().top - scrolltoOffset;
 
-        if ($(this).attr("href") == '#header') {
+        if ($(this).attr("href") === '#header') {
           scrollto = 0;
         }
 
@@ -145,10 +158,10 @@
   });
 
   // jQuery counterUp
-  $('[data-toggle="counter-up"]').counterUp({
-    delay: 10,
-    time: 1000
-  });
+  // $('[data-toggle="counter-up"]').counterUp({
+  //   delay: 10,
+  //   time: 1000
+  // });
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
@@ -199,17 +212,5 @@
     items: 1
   });
 
-  // Init AOS
-  function aos_init() {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
-  }
-  $(window).on('load', function() {
-    aos_init();
-  });
 
 })(jQuery);
