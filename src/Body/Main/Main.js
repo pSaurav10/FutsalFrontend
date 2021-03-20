@@ -1,7 +1,8 @@
 import{Component} from "react";
 import About from './About';
 import Partners from './Partners';
-import Count from './Count'; 
+import Count from './Count';
+import Whyus from './Whyus';
 class Main extends Component{
     
     render(){
@@ -10,6 +11,7 @@ class Main extends Component{
                 <Partners></Partners>
                 <About></About>
                 <Count></Count>
+                <Whyus></Whyus>
             </main>
         )
     }

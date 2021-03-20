@@ -19,13 +19,13 @@ class Count extends Component {
                         </div>
 
                         <div class="col-lg-3 col-6 text-center">
-                            <span data-toggle="counter-up">1,463</span>
+                            <span data-toggle="counter-up">1,463 +</span>
                             <p>Users</p>
                         </div>
 
                         <div class="col-lg-3 col-6 text-center">
-                            <span data-toggle="counter-up">15</span>
-                            <p>Hard Workers</p>
+                            <span data-toggle="counter-up">4</span>
+                            <p>Payment Partners</p>
                         </div>
 
                     </div>
