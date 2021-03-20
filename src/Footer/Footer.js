@@ -17,22 +17,22 @@ class Footer extends Component {
                         <div class="row">
 
                             <Footercontact></Footercontact>
-                                        
 
-                           <Footerlinks></Footerlinks>
+
+                            <Footerlinks></Footerlinks>
 
                             <Footerservices></Footerservices>
 
-                           <Footerletter></Footerletter>            
-        
+                            <Footerletter></Footerletter>
+
                         </div>
                     </div>
                 </div>
                 <div class="container d-md-flex py-4">
 
-                                            <Footercopyright></Footercopyright>
-                                            <Footersocial></Footersocial>
-                                        </div>
+                    <Footercopyright></Footercopyright>
+                    <Footersocial></Footersocial>
+                </div>
             </footer>
         )
     }

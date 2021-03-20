@@ -12,14 +12,12 @@ class Header extends Component {
                         </div>
                         {/* <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>--> */}
                     
-
-                    <nav class="nav-menu d-none d-lg-block">
+                    <nav class="nav-menu d-none d-lg-block ">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
                             <li><a href="">Futsals</a></li>
                             <li><a href="">Events</a></li>
                             <li><a href="">Community</a></li>
-
                             <li class="get-started"><a href="">Login</a></li>
                         </ul>
                     </nav>
