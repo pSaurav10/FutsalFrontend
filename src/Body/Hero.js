@@ -2,8 +2,6 @@ import{Component} from "react";
  
 class Hero extends Component{
     
-
-   
     render(){
         return(
             <section id="hero" class="d-flex align-items-center full-height">

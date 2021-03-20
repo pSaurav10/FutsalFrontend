@@ -1,6 +1,6 @@
 import { Component,state } from "react";
 import Hero from './Hero';
-import About from './About';
+import Main from './Main/Main';
 import axios from 'axios';
 
 class Body extends Component {
@@ -24,7 +24,7 @@ class Body extends Component {
             
                 <div>
                     <Hero></Hero>
-                    <About></About>
+                    <Main></Main>
                 </div>
         )
     }
