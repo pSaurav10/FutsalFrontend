@@ -3,6 +3,8 @@ import About from './About';
 import Partners from './Partners';
 import Count from './Count';
 import Whyus from './Whyus';
+import Futsal from './Futsal';
+import Event from './Event';
 class Main extends Component{
     
     render(){
@@ -12,6 +14,8 @@ class Main extends Component{
                 <About></About>
                 <Count></Count>
                 <Whyus></Whyus>
+                <Futsal></Futsal>
+                <Event></Event>
             </main>
         )
     }
