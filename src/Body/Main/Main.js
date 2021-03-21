@@ -5,6 +5,7 @@ import Count from './Count';
 import Whyus from './Whyus';
 import Futsal from './Futsal';
 import Event from './Event';
+import Contact from './Contact';
 class Main extends Component{
     
     render(){
@@ -16,6 +17,7 @@ class Main extends Component{
                 <Whyus></Whyus>
                 <Futsal></Futsal>
                 <Event></Event>
+                <Contact></Contact>
             </main>
         )
     }
