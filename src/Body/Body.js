@@ -1,6 +1,8 @@
 import { Component,state } from "react";
-import Hero from './Hero';
+import {Route} from 'react-router-dom';
+import Register from './Register'
 import Main from './Main/Main';
+import Login from './Login';
 import axios from 'axios';
 
 class Body extends Component {
@@ -23,8 +25,9 @@ class Body extends Component {
         return (
             
                 <div>
-                    <Hero></Hero>
-                    <Main></Main>
+                    <Route path="/" exact component={Main}></Route>
+                    <Route path='/register' exact component={Register}></Route>
+                    <Route path="/login" exact component={Login}></Route>
                 </div>
         )
     }

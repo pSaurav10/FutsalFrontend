@@ -1434,3 +1434,14 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+
+/* Register */
+
+.border-md {
+  border-width: 2px;
+}
+
+.register{
+  margin-top: 100px;
+}
