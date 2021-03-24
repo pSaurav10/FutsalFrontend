@@ -15,25 +15,16 @@ class Header extends Component {
                     <nav class="nav-menu d-none d-lg-block ">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
-                            <li><a href="/futsals">Futsals</a></li>
+                            <li><a href="/futsals">Futsal</a></li>
                             <li><a href="/events">Events</a></li>
                             <li><a href="/community">Community</a></li>
                             <li class="get-started"><a href="/Login">Login</a></li>
                         </ul>
                     </nav>
-                    {/* <!-- .nav-menu --> */}
                 </div>
-                {/* <!-- End Header Container --> */}
               </div>
               </header>
-            // <!-- End Header -->
-            // <Container>
-            //     <Row>
-            //         <Col><a href= "/">Home</a>
-            //         <a href= "/register">Register</a>
-            //         <a href= "/login">Login</a></Col>
-            //     </Row>
-            // </Container>
+            
         )
     }
 }
