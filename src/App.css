@@ -368,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  background: url("./assets/img/futsalbg.jpg") center center;
+  background: url("./assets/img/futsallogin.jpg") center center;
   background-size:cover;
   position: relative;
   height:100vh;
@@ -1444,4 +1444,12 @@ section {
 
 .register{
   margin-top: 100px;
+}
+
+.form-group .btn {
+  background: #009970;
+}
+
+.form-group .btn:hover {
+  background:#00664b;
 }

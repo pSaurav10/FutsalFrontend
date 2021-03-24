@@ -37,19 +37,13 @@ class Login extends Component {
             <div class="container register">
                 <div class="row py-5 mt-4 align-items-center">
                     <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block" />
-                        <h1>Login to your Account</h1>
-                        <p class="font-italic text-muted mb-0">Create a minimal registeration page using Bootstrap 4 HTML form elements.</p>
-                        <p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
-                            <u>Bootstrapious</u></a>
-                        </p>
+                        <img src="assets/img/login.svg" alt="Register" class="img-fluid mb-3 d-none d-md-block" />
+                        <h2>Login to your Account</h2>
                     </div>
 
                     <div class="col-md-7 col-lg-6 ml-auto">
                         <form action="#">
                             <div class="row">
-
-                               
 
                                 <div class="input-group col-lg-12 mb-4">
                                     <div class="input-group-prepend">
