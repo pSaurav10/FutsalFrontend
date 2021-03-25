@@ -1,15 +1,15 @@
 import { Component, state } from "react";
 import axios from 'axios';
 
-class Futsal extends Component {
+class Event extends Component {
     state = {
-        futsals: []
+        events: []
     }
     componentDidMount() {
-        axios.get("http://localhost:8080/futsal/fetch")
+        axios.get("http://localhost:8080/event/fetch")
             .then((response) => {
                 this.setState({
-                    futsals: response.data.data
+                    events: response.data.data
                 })
                 console.log(response.data.data)
             })
@@ -23,23 +23,23 @@ class Futsal extends Component {
                 <div class="container">
 
                     <div class="section-title" data-aos="fade-left">
-                        <h2>Futsal</h2>
-                        <p>Here, you can browse through all the futsals registered in our website. And you can book the futsal of your choice</p>
+                        <h2>Event</h2>
+                        <p>Here, you can browse through all the events that are going to take place.</p>
                     </div>
 
                     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                         {
-                            this.state.futsals.map((futsal, i) => {
+                            this.state.events.map((event, i) => {
 
                                 return (
                                     <div class="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
                                         <div class="portfolio-wrap">
-                                            <img src={'http://localhost:8080/image/'+futsal.image} class="img-fluid" alt="" />
+                                            <img src={'http://localhost:8080/image/'+event.image} class="img-fluid" alt="" />
                                             <div class="portfolio-info">
-                                                <h4>{futsal.name}</h4>
-                                                <p>{futsal.address}</p>
+                                                <h4>{event.name}</h4>
+                                                <p>{event.location}</p>
                                                 <div class="portfolio-links">
-                                                    <a href={'http://localhost:8080/image/'+futsal.image} data-gall="portfolioGallery" class="venobox" title={futsal.name}><i class="bx bx-plus"></i></a>
+                                                    <a href={'http://localhost:8080/image/'+event.image} data-gall="portfolioGallery" class="venobox" title={event.name}><i class="bx bx-plus"></i></a>
                                                     <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
                                                 </div>
                                             </div>
@@ -55,4 +55,4 @@ class Futsal extends Component {
         )
     }
 }
-export default Futsal;
+export default Event;

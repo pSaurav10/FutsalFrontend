@@ -75,12 +75,12 @@
     var $mobile_nav = $('.nav-menu').clone().prop({
       class: 'mobile-nav d-lg-none'
     });
-    $('#root').append($mobile_nav);
-    $('#root').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
-    $('#root').append('<div class="mobile-nav-overly"></div>');
+    $('header').append($mobile_nav);
+    $('header').prepend('<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>');
+    $('header').append('<div class="mobile-nav-overly"></div>');
 
     $(document).on('click', '.mobile-nav-toggle', function(e) {
-      $('#root').toggleClass('mobile-nav-active');
+      $('header').toggleClass('mobile-nav-active');
       $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
       $('.mobile-nav-overly').toggle();
     });
@@ -94,8 +94,8 @@
     $(document).click(function(e) {
       var container = $(".mobile-nav, .mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('#root').hasClass('mobile-nav-active')) {
-          $('#root').removeClass('mobile-nav-active');
+        if ($('header').hasClass('mobile-nav-active')) {
+          $('header').removeClass('mobile-nav-active');
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
           $('.mobile-nav-overly').fadeOut();
         }
@@ -214,3 +214,24 @@
 
 
 })(jQuery);
+
+$(function(){
+  $('.burger-menu').on('click', function(){
+      $('.toggle').toggleClass('open');
+      $('.nav-list').toggleClass('open');
+  })
+})
+
+
+
+$(".nav-link").on("click", function(e){
+  $("a.nav-link").removeClass("active");
+  $(this).addClass("active");
+})
+
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".bg-trans");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > 1);
+  });
+});
