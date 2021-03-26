@@ -1,4 +1,5 @@
 import { Component, state } from "react";
+import {Route, Link} from 'react-router-dom';
 import axios from 'axios';
 
 class Futsal extends Component {
@@ -28,7 +29,7 @@ class Futsal extends Component {
                     </div>
 
                     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                        {
+                        { 
                             this.state.futsals.map((futsal, i) => {
 
                                 return (
@@ -40,7 +41,8 @@ class Futsal extends Component {
                                                 <p>{futsal.address}</p>
                                                 <div class="portfolio-links">
                                                     <a href={'http://localhost:8080/image/'+futsal.image} data-gall="portfolioGallery" class="venobox" title={futsal.name}><i class="bx bx-plus"></i></a>
-                                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                                    
+                                                    <Link to={'/futsal/fetch/'+ futsal._id}><i class="bx bx-link"></i></Link>
                                                 </div>
                                             </div>
                                         </div>
