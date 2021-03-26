@@ -22,7 +22,7 @@ class EventDetail extends Component {
     return (
       <section id="portfolio-details" class="portfolio-details single-detail">
         {
-          this.state.futsals.map((futsal) => {
+          this.state.events.map((event) => {
             return (
               <div class="container">
 
@@ -33,21 +33,21 @@ class EventDetail extends Component {
                   </div>
 
                   <div class="portfolio-info">
-                    <h3>Futsal information</h3>
+                    <h3>Event information</h3>
                     <ul>
                       <li><strong>Name</strong>: {event.name}</li>
-                      <li><strong>Address</strong>: {futsal.address}</li>
-                      <li><strong>Phone</strong>: {futsal.phoneNumber}</li>
-                      <li><strong>Grounds</strong>: {futsal.grounds}</li>
+                      <li><strong>Address</strong>: {event.location}</li>
+                      <li><strong>Phone</strong>: {event.phone}</li>
+                      <li><strong>Entry Fee</strong>: {event.fee}</li>
                     </ul>
                   </div>
 
                 </div>
 
                 <div class="portfolio-description">
-                  <h2>Description of {futsal.name}</h2>
+                  <h2>Description of {event.name}</h2>
                   <p>
-                    {futsal.description}
+                    {event.description}
                   </p>
                 </div>
               </div>

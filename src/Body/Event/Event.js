@@ -1,4 +1,5 @@
 import { Component, state } from "react";
+import {Route, Link} from 'react-router-dom';
 import axios from 'axios';
 
 class Event extends Component {
@@ -40,7 +41,7 @@ class Event extends Component {
                                                 <p>{event.location}</p>
                                                 <div class="portfolio-links">
                                                     <a href={'http://localhost:8080/image/'+event.image} data-gall="portfolioGallery" class="venobox" title={event.name}><i class="bx bx-plus"></i></a>
-                                                    <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                                                    <Link to={'/event/fetch/'+ event._id}><i class="bx bx-link"></i></Link>
                                                 </div>
                                             </div>
                                         </div>
