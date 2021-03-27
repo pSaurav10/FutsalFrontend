@@ -38,8 +38,9 @@ class FutsalDetail extends Component {
                     <ul>
                       <li><strong>Name</strong>: {futsal.name}</li>
                       <li><strong>Address</strong>: {futsal.address}</li>
-                      <li><strong>Phone</strong>: {futsal.phoneNumber}</li>
+                      <li><strong>Phone</strong>:+977 {futsal.phoneNumber}</li>
                       <li><strong>Grounds</strong>: {futsal.grounds}</li>
+                      <li><strong>Fee</strong>: {futsal.fee}</li>
                     </ul>
                   </div>
 

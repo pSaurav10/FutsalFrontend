@@ -5,6 +5,7 @@ import Main from './Main/Main';
 import Login from './Login';
 import FutsalPage from './Futsal/Futsal';
 import FutsalDetail from './Futsal/FutsalDetail';
+import FutsalRegister from './Futsal/FutsalRegister';
 import EventPage from './Event/Event';
 import EventDetail from './Event/EventDetail';
 
@@ -19,6 +20,7 @@ class Body extends Component {
                     <Route path='/register' exact component={Register}></Route>
                     <Route path="/login" exact component={Login}></Route>
                     <Route path="/futsal/fetch/:id" exact component={FutsalDetail}></Route>
+                    <Route path="/futsal-register" exact component={FutsalRegister}></Route>
                     <Route path="/event/fetch/:id" exact component={EventDetail}></Route>
                     
                 </div>

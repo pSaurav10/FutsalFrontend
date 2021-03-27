@@ -24,6 +24,7 @@ class Login extends Component {
                 checklogin: true
             })
             localStorage.setItem('token', response.data.token)
+            localStorage.setItem('userid', response.data.data._id)
         })
         .catch((error) => {
             console.log(error);
