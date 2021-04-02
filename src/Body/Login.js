@@ -1,6 +1,5 @@
 import { Component, state, loginUser, loginhandler } from "react";
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
 
 class Login extends Component {
     state = {
@@ -32,7 +31,7 @@ class Login extends Component {
     }
     render() {
         if (this.state.checklogin === true){
-            return<Redirect to='/'/>
+            return window.location.href = '/';
         }
         return (
             <div class="container register">
