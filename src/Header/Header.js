@@ -26,7 +26,6 @@ class Header extends Component {
               <img src="static/databaseimage/{{ user.tbluser.profilephoto }}" width="30" height="30" class="rounded-circle" />
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Dashboard</a>
               <a class="dropdown-item" href="#">Profile</a>
               <a class="dropdown-item " href="/" onClick={this.logout}>Log Out</a>
             </div>

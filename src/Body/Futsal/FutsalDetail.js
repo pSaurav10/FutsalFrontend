@@ -21,7 +21,7 @@ class FutsalDetail extends Component {
     time: "",
     username: "",
     userid: localStorage.getItem('userid')
-    
+
   }
   componentDidMount() {
     console.log(this.state.futid)
@@ -35,10 +35,9 @@ class FutsalDetail extends Component {
           image: response.data.data.image,
           grounds: response.data.data.grounds,
           fee: response.data.data.fee,
-          userid: response.data.data.userid,
           approve: response.data.data.approve,
           futsalname: response.data.data.name,
-          futsalid: response.data.data.id
+          futsalid: response.data.data._id
         })
         console.log(response.data.data)
       })
@@ -63,13 +62,13 @@ class FutsalDetail extends Component {
         console.log(err.response)
       })
   }
- 
+
 
   render() {
     const options = [
       '06 am', '07 am', '08 am', '09 am', '10 am'
     ]
-       
+
     return (
       <div>
         <section id="portfolio-details" class="portfolio-details single-detail">
@@ -102,7 +101,7 @@ class FutsalDetail extends Component {
               </p>
             </div>
           </div>
-              
+
 
         </section>
 
@@ -156,30 +155,30 @@ class FutsalDetail extends Component {
                 </div>
 
                 <div class="form-group col-lg-4 mx-auto mb-0">
-                  <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.futsalBook}>Book Futsal</button>
+                  <button className="btn btn-lg btn-primary btn-block mb-2 text-uppercase" type="submit" onClick={this.futsalBook}>Book Futsal</button>
+                  <form action="https://uat.esewa.com.np/epay/main" method="POST">
+                    <input value="100" name="tAmt" type="hidden" />
+                    <input value="90" name="amt" type="hidden" />
+                    <input value="5" name="txAmt" type="hidden" />
+                    <input value="2" name="psc" type="hidden" />
+                    <input value="3" name="pdc" type="hidden" />
+                    <input value="EPAYTEST" name="scd" type="hidden" />
+                    <input value="ee2c3ca1-696b-4cc5-a6be-2c40d929d453" name="pid" type="hidden" />
+                    <input value="http://merchant.com.np/page/esewa_payment_success?q=su" type="hidden" name="su" />
+                    <input value="http://merchant.com.np/page/esewa_payment_failed?q=fu" type="hidden" name="fu" />
+                    <input value="Pay Now" type="submit" className="btn btn-lg btn-primary btn-block text-uppercase"/>
+                  </form>
                 </div>
 
               </div>
             </div>
           </div>
         </div>
-        <Modal show={this.state.show} onHide={this.handleClose}>
-					<Modal.Header closeButton>
-						<Modal.Title>Modal heading</Modal.Title>
-					</Modal.Header>
-					<Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-					<Modal.Footer>
-						<Button variant="secondary" onClick={this.handleClose}>
-							Close
-            </Button>
-						<Button variant="primary" onClick={this.handleClose}>
-							Save Changes
-            </Button>
-					</Modal.Footer>
-				</Modal>
 
       </div>
     )
   }
 }
 export default FutsalDetail;
+
+
