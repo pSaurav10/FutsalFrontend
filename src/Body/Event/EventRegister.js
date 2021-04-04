@@ -39,7 +39,7 @@ class EventRegister extends Component {
         data.append('userid', this.state.userid)
         data.append('approve', this.state.approve)
 
-        axios.post("http://localhost:8080/event/add", data)
+        axios.post("http://localhost:8080/event/add", data,this.state.config)
         .then((response)=>{
             console.log(response)
         })

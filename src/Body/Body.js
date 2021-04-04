@@ -9,6 +9,7 @@ import FutsalRegister from './Futsal/FutsalRegister';
 import EventPage from './Event/Event';
 import EventDetail from './Event/EventDetail';
 import EventRegister from './Event/EventRegister';
+import Community from './Community/Community';
 
 class Body extends Component {
     render() {
@@ -18,6 +19,7 @@ class Body extends Component {
                     <Route path="/" exact component={Main}></Route>
                     <Route path="/Futsal" exact component={FutsalPage}></Route>
                     <Route path="/Event" exact component={EventPage}></Route>
+                    <Route path="/Community" exact component={Community}></Route>
                     <Route path='/register' exact component={Register}></Route>
                     <Route path="/login" exact component={Login}></Route>
                     <Route path="/futsal/fetch/:id" exact component={FutsalDetail}></Route>

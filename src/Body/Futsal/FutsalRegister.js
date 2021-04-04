@@ -39,7 +39,7 @@ class FutsalRegister extends Component {
         data.append('userid', this.state.userid)
         data.append('approve', this.state.approve)
 
-        axios.post("http://localhost:8080/futsal/register", data)
+        axios.post("http://localhost:8080/futsal/register", data,this.state.config)
         .then((response)=>{
             console.log(response)
         })
