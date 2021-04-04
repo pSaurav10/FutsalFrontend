@@ -24,7 +24,6 @@ class FutsalDetail extends Component {
 
   }
   componentDidMount() {
-    console.log(this.state.futid)
     axios.get("http://localhost:8080/futsal/fetch/" + this.state.futid)
       .then((response) => {
         this.setState({
