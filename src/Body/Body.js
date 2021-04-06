@@ -11,6 +11,7 @@ import EventDetail from './Event/EventDetail';
 import EventRegister from './Event/EventRegister';
 import Community from './Community/Community';
 import SinglePost from './Community/SinglePost';
+import Profile from './Profile/Profile';
 
 class Body extends Component {
     render() {
@@ -28,6 +29,7 @@ class Body extends Component {
                     <Route path="/event/fetch/:id" exact component={EventDetail}></Route>
                     <Route path="/event-register" exact component={EventRegister}></Route>
                     <Route path="/post/fetch/:id" exact component={SinglePost}></Route>
+                    <Route path="/profile" exact component={Profile}></Route>
                     
                 </div>
         )
