@@ -1,6 +1,25 @@
-import { Component, logout } from "react";
-
+import { Component, state, logout } from "react";
+import axios from 'axios';
 class Header extends Component {
+  state = {
+    username: "",
+    imagepp: "",
+    config: {
+        headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+    }
+}
+componentDidMount() {
+    axios.get("http://localhost:8080/profile", this.state.config)
+        .then((response) => {
+            this.setState({
+                username: response.data.data.username,
+                imagepp: response.data.data.imagepp
+            })
+        })
+        .catch((err) => {
+            console.log(err.response)
+        })
+}
   logout = () =>{
     localStorage.clear();
     window.location.href = '/';
@@ -23,7 +42,7 @@ class Header extends Component {
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="static/databaseimage/{{ user.tbluser.profilephoto }}" width="30" height="30" class="rounded-circle" />
+              <img src={'http://localhost:8080/image/' + this.state.imagepp} width="30" height="30" class="rounded-circle" />
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a class="dropdown-item" href="/profile">Profile</a>

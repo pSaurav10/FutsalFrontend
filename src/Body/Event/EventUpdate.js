@@ -1,13 +1,13 @@
-import { Component, state, inputHandler, futsalUpdate } from "react";
+import { Component, state, inputHandler, eventUpdate } from "react";
 import axios from 'axios';
 
-class FutsalUpdate extends Component {
+class EventUpdate extends Component {
     state = {
         name: "",
-        address: "",
-        phoneNumber: "",
+        location: "",
+        phone: "",
         description: "",
-        grounds: "",
+        date: "",
         fee: "",
         id: this.props.match.params.id,
         config:{
@@ -15,14 +15,14 @@ class FutsalUpdate extends Component {
         }
     }
     componentDidMount() {
-        axios.get("http://localhost:8080/futsal/fetch/" + this.state.id)
+        axios.get("http://localhost:8080/event/fetch/" + this.state.id)
           .then((response) => {
             this.setState({
               name: response.data.data.name,
-              address: response.data.data.address,
-              phoneNumber: response.data.data.phoneNumber,
+              location: response.data.data.location,
+              phone: response.data.data.phone,
               description: response.data.data.description,
-              grounds: response.data.data.grounds,
+              date: response.data.data.date,
               fee: response.data.data.fee
             })
           })
@@ -35,10 +35,10 @@ class FutsalUpdate extends Component {
             [e.target.name]: e.target.value
         })
     }
-    futsalUpdate = (e) =>{
+    eventUpdate = (e) =>{
         e.preventDefault();
 
-        axios.put("http://localhost:8080/futsal/update", this.state,this.state.config)
+        axios.put("http://localhost:8080/event/update", this.state,this.state.config)
         .then((response)=>{
             console.log(response)
         })
@@ -51,8 +51,8 @@ class FutsalUpdate extends Component {
             <div class="container register">
                 <div class="row py-5 mt-4 align-items-center">
                     <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                        <h1>Update your Futsal</h1><br/>
-                        <p>Here you can update the details of your futsal.</p>
+                        <h1>Update your Events</h1><br/>
+                        <p>Here you can update the details of your Event.</p>
                     </div>
                     <div class="col-md-7 col-lg-6 ml-auto">
                         
@@ -75,8 +75,8 @@ class FutsalUpdate extends Component {
                                         <i class='bx bx-current-location text-muted'></i>
                                         </span>
                                     </div>
-                                    <input id="address" type="text" name="address" 
-                                    value={this.state.address} onChange={this.inputHandler} required
+                                    <input id="location" type="text" name="location" 
+                                    value={this.state.location} onChange={this.inputHandler} required
                                     placeholder="Address" class="form-control bg-white border-left-0 border-md" />
                                 </div>
 
@@ -86,8 +86,8 @@ class FutsalUpdate extends Component {
                                         <i class='bx bxs-phone text-muted'></i>
                                         </span>
                                     </div>
-                                    <input id="phoneNumber" type="number" name="phoneNumber" min="0" 
-                                    value={this.state.phoneNumber} onChange={this.inputHandler} required
+                                    <input id="phone" type="number" name="phone" min="0" 
+                                    value={this.state.phone} onChange={this.inputHandler} required
                                     placeholder="Phone Number" class="form-control bg-white border-left-0 border-md" />
                                 </div>
 
@@ -97,9 +97,9 @@ class FutsalUpdate extends Component {
                                         <i class='bx bx-play text-muted'></i>
                                         </span>
                                     </div>
-                                    <input id="grounds" type="number" name="grounds" min="0"
-                                    value={this.state.grounds} onChange={this.inputHandler} required
-                                    placeholder="Grounds" class="form-control bg-white border-left-0 border-md" />
+                                    <input id="date" type="text" name="date" min="0"
+                                    value={this.state.date} onChange={this.inputHandler} required
+                                    placeholder="Event Date" class="form-control bg-white border-left-0 border-md" />
                                 </div>
 
                                 <div class="input-group col-lg-12 mb-4">
@@ -125,7 +125,7 @@ class FutsalUpdate extends Component {
                                 </div>
 
                                 <div class="form-group col-lg-12 mx-auto mb-0">
-                                <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.futsalUpdate}>Update your Futsal</button>
+                                <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.eventUpdate}>Update your Event</button>
                                 </div>
 
                             </div>
@@ -135,4 +135,4 @@ class FutsalUpdate extends Component {
         )
     }
 }
-export default FutsalUpdate;
+export default EventUpdate;

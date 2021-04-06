@@ -37,6 +37,7 @@ class EventDetail extends Component {
                     <ul>
                       <li><strong>Name</strong>: {event.name}</li>
                       <li><strong>Address</strong>: {event.location}</li>
+                      <li><strong>Date</strong>: {event.date}</li>
                       <li><strong>Phone</strong>: {event.phone}</li>
                       <li><strong>Entry Fee</strong>: {event.fee}</li>
                     </ul>

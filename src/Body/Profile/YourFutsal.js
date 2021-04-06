@@ -26,8 +26,6 @@ class YourFutsal extends Component {
                     futsals: response.data.data
 
                 })
-                console.log(this.state.futsals.length)
-                console.log(response.data.data)
             })
             .catch((err) => {
                 console.log(err.response)
@@ -44,9 +42,9 @@ class YourFutsal extends Component {
                                     <strong>{i + 1}. {futsal.name}</strong>
                                 </div>
                                 <div class="col-sm-12">
-                                    <span><Link to={'/futsal/fetch/' + futsal._id}>View</Link></span>
-                                    <span>  <Link to={'/futsal/update/' + futsal._id}>Update</Link></span>
-                                    <span>  <button onClick={this.deleteFutsal.bind(this, futsal._id)}>Delete</button></span>
+                                    <span><Link class="get-button" to={'/futsal/fetch/' + futsal._id}>View</Link></span>
+                                    <span>  <Link class="get-button" to={'/futsal/update/' + futsal._id}>Update</Link></span>
+                                    <span>  <button class="get-button" onClick={this.deleteFutsal.bind(this, futsal._id)}>Delete</button></span>
                                 </div>
 
                             </div>

@@ -12,7 +12,9 @@ import EventRegister from './Event/EventRegister';
 import Community from './Community/Community';
 import SinglePost from './Community/SinglePost';
 import Profile from './Profile/Profile';
-import FutsalUpdate from './Futsal/FutsalUpdate'
+import FutsalUpdate from './Futsal/FutsalUpdate';
+import EventUpdate from './Event/EventUpdate';
+
 
 class Body extends Component {
     render() {
@@ -30,6 +32,7 @@ class Body extends Component {
                     <Route path="/futsal/update/:id" exact component={FutsalUpdate}></Route>
                     <Route path="/event/fetch/:id" exact component={EventDetail}></Route>
                     <Route path="/event-register" exact component={EventRegister}></Route>
+                    <Route path="/event/update/:id" exact component={EventUpdate}></Route>
                     <Route path="/post/fetch/:id" exact component={SinglePost}></Route>
                     <Route path="/profile" exact component={Profile}></Route>
                     
