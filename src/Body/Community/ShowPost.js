@@ -25,7 +25,7 @@ class ShowPost extends Component {
                     this.state.posts.map((post, i) => {
 
                         return (
-                            <div class="bg-white border mt-2 mb-2" style={{}} key={i}>
+                            <div class="bg-white border mt-2 mb-2"  key={i}>
                                 <div>
                                     <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
                                         <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src={'http://localhost:8080/image/' + post.userimage} width="45" />
@@ -33,12 +33,12 @@ class ShowPost extends Component {
                                         </div>
                                         <div class="feed-icon px-2">
                                             <a href={'/post/fetch/' + post._id}>
-                                                Post details</a>
+                                                Full Post</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row">
-                                        <div class="p-2 px-3"><span>{post.post}</span></div>
+                                        <div class="p-2 px-3 ml-4"><span>{post.post}</span></div>
                                     
                                 </div>
 
