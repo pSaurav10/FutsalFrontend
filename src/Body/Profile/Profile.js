@@ -2,6 +2,7 @@ import { Component, state, insertPost, postHandler } from "react";
 import axios from 'axios';
 import YourFutsal from './YourFutsal';
 import YourEvent from './YourEvent';
+import YourBooking from './YourBooking';
 
 class Profile extends Component {
     state = {
@@ -56,7 +57,7 @@ class Profile extends Component {
                             </div>
                         </div>
                         <div class="col-md-8" >
-                            <div class="card mb-3" style={{ height: "310px"}}>
+                            <div class="card mb-3" style={{ height: "310px" }}>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">
@@ -104,31 +105,42 @@ class Profile extends Component {
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="row">
-                                <div class="col-md-12 col-lg-6 mb-3">
-                                    <div class="card h-100">
-                                        <div className="row">
-                                            <div class="col-sm-12">
-                                                <h3 class="d-flex align-items-center mb-1 ml-3">Your Futsals</h3>
-                                            </div>
-                                        </div>
-                                        <YourFutsal></YourFutsal>
+                        <div class="col-md-12 col-lg-6 mb-3">
+                            <div class="card h-100">
+                                <div className="row">
+                                    <div class="col-sm-12">
+                                        <h3 class="d-flex align-items-center mb-1 ml-3">Your Futsals</h3>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-lg-6 mb-3">
-                                <div class="card h-100">
-                                        <div className="row">
-                                            <div class="col-sm-12">
-                                                <h3 class="d-flex align-items-center mb-1 ml-3">Your Events</h3>
-                                            </div>
-                                        </div>
-                                        <YourEvent></YourEvent>
+                                <YourFutsal></YourFutsal>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-lg-6 mb-3">
+                            <div class="card h-100">
+                                <div className="row">
+                                    <div class="col-sm-12">
+                                        <h3 class="d-flex align-items-center mb-1 ml-3">Your Events</h3>
                                     </div>
+                                </div>
+                                <YourEvent></YourEvent>
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-12 col-lg-12 mb-3">
+                                <div class="card h-100">
+                                    <div className="row">
+                                        <div class="col-sm-12">
+                                            <h3 class="d-flex align-items-center mb-1 ml-3">Your Bookings</h3>
+                                        </div>
+                                    </div>
+                                    <YourBooking></YourBooking>
                                 </div>
                             </div>
+                    </div>
                 </div>
             </div>
         )
