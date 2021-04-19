@@ -10,7 +10,7 @@ class Futsal extends Component {
         axios.get("http://localhost:8080/futsal/fetch")
             .then((response) => {
                 this.setState({
-                    futsals: response.data.data
+                    futsals: response.data.data.reverse()
                 })
                 console.log(response.data.data)
             })
@@ -46,8 +46,6 @@ class Futsal extends Component {
                                                 <h4>{futsal.name}</h4>
                                                 <p>{futsal.address}</p>
                                                 <div class="portfolio-links">
-                                                    <a href={'http://localhost:8080/image/' + futsal.image} data-gall="portfolioGallery" class="venobox" title={futsal.name}><i class="bx bx-plus"></i></a>
-
                                                     <Link to={'/futsal/fetch/' + futsal._id}><i class="bx bx-link"></i></Link>
                                                 </div>
                                             </div>

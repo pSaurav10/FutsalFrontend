@@ -1,51 +1,48 @@
-import { Component, state, inputHandler, fileHandler, eventAdd } from "react";
+import { Component, state, inputHandler, futsalUpdate } from "react";
 import axios from 'axios';
-import {Redirect} from 'react-router-dom';
 
-class EventRegister extends Component {
+class Profile extends Component {
     state = {
-        name: "",
-        description: "",
-        image: "",
-        date: "",
-        fee: "",
+        fname: "",
+        lname: "",
+        username: "",
+        address: "",
         phone: "",
-        location: "",
-        userid: localStorage.getItem('userid'),
-        approve: false,
-        checkRegister: false,
+        email: "",
+        dob: "",
+        id: this.props.match.params.id,
         config:{
             headers: {'authorization': `Bearer ${localStorage.getItem('token')}`}
         }
     }
+    componentDidMount() {
+        axios.get("http://localhost:8080/profile" , this.state.config)
+          .then((response) => {
+            this.setState({
+              fname: response.data.data.fname,
+              lname: response.data.data.lname,
+              username: response.data.data.username,
+              address: response.data.data.address,
+              phone: response.data.data.phone,
+              email: response.data.data.email,
+              dob: response.data.data.dob,
+              fee: response.data.data.fee
+            })
+          })
+          .catch((err) => {
+            console.log(err.response)
+          })
+      }
     inputHandler = (e) =>{
         this.setState({
             [e.target.name]: e.target.value
         })
     }
-    fileHandler = (e) =>{
-        this.setState({
-            image: e.target.files[0]
-        })
-    }
-    eventAdd = (e) =>{
+    futsalUpdate = (e) =>{
         e.preventDefault();
-        const data = new FormData()
-        data.append('name', this.state.name)
-        data.append('description', this.state.description)
-        data.append('image', this.state.image)
-        data.append('date', this.state.date)
-        data.append('fee', this.state.fee)
-        data.append('phone', this.state.phone)
-        data.append('location',this.state.location)
-        data.append('userid', this.state.userid)
-        data.append('approve', this.state.approve)
 
-        axios.post("http://localhost:8080/event/add", data,this.state.config)
+        axios.put("http://localhost:8080/futsal/update", this.state,this.state.config)
         .then((response)=>{
-            this.setState({ 
-                checkRegister: true
-            })
             console.log(response)
         })
         .catch((err)=>{
@@ -53,15 +50,12 @@ class EventRegister extends Component {
         })
     }
     render() {
-        if(this.state.checkRegister === true){
-            return <Redirect to='/Event'/>
-        }
         return (
             <div class="container register">
                 <div class="row py-5 mt-4 align-items-center">
                     <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                        <h1>Register your Event</h1><br/>
-                        <p>Remember that your Event needs to be approved by our <strong>ADMIN TEAM</strong> before it is shown in the list of Registered Events.</p>
+                        <h1>Update your Futsal</h1><br/>
+                        <p>Here you can update the details of your futsal.</p>
                     </div>
                     <div class="col-md-7 col-lg-6 ml-auto">
                         
@@ -84,8 +78,8 @@ class EventRegister extends Component {
                                         <i class='bx bx-current-location text-muted'></i>
                                         </span>
                                     </div>
-                                    <input id="location" type="text" name="location" 
-                                    value={this.state.location} onChange={this.inputHandler} required
+                                    <input id="address" type="text" name="address" 
+                                    value={this.state.address} onChange={this.inputHandler} required
                                     placeholder="Address" class="form-control bg-white border-left-0 border-md" />
                                 </div>
 
@@ -95,20 +89,9 @@ class EventRegister extends Component {
                                         <i class='bx bxs-phone text-muted'></i>
                                         </span>
                                     </div>
-                                    <input id="phone" type="number" name="phone" min="0" 
-                                    value={this.state.phone} onChange={this.inputHandler} required
+                                    <input id="phoneNumber" type="number" name="phoneNumber" min="0" 
+                                    value={this.state.phoneNumber} onChange={this.inputHandler} required
                                     placeholder="Phone Number" class="form-control bg-white border-left-0 border-md" />
-                                </div>
-
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class='bx bxs-envelope text-muted'></i>Image
-                                        </span>
-                                    </div>
-                                    <input id="image" type="file" name="image" 
-                                    onChange={this.fileHandler} required
-                                    placeholder="Image" class="form-control bg-white border-left-0 border-md" />
                                 </div>
 
                                 <div class="input-group col-lg-12 mb-4">
@@ -117,9 +100,9 @@ class EventRegister extends Component {
                                         <i class='bx bx-play text-muted'></i>
                                         </span>
                                     </div>
-                                    <input id="date" type="string" name="date" min="0"
-                                    value={this.state.date} onChange={this.inputHandler} required
-                                    placeholder="Dates" class="form-control bg-white border-left-0 border-md" />
+                                    <input id="grounds" type="number" name="grounds" min="0"
+                                    value={this.state.grounds} onChange={this.inputHandler} required
+                                    placeholder="Grounds" class="form-control bg-white border-left-0 border-md" />
                                 </div>
 
                                 <div class="input-group col-lg-12 mb-4">
@@ -145,7 +128,7 @@ class EventRegister extends Component {
                                 </div>
 
                                 <div class="form-group col-lg-12 mx-auto mb-0">
-                                <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.eventAdd}>Register your Futsal</button>
+                                <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.futsalUpdate}>Update your Futsal</button>
                                 </div>
 
                             </div>
@@ -155,4 +138,4 @@ class EventRegister extends Component {
         )
     }
 }
-export default EventRegister;
+export default FutsalUpdate;

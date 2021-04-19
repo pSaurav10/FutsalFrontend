@@ -1,5 +1,6 @@
 import { Component, state, inputHandler, futsalUpdate } from "react";
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
 class FutsalUpdate extends Component {
     state = {
@@ -12,7 +13,8 @@ class FutsalUpdate extends Component {
         id: this.props.match.params.id,
         config:{
             headers: {'authorization': `Bearer ${localStorage.getItem('token')}`}
-        }
+        },
+        checkRegister: false
     }
     componentDidMount() {
         axios.get("http://localhost:8080/futsal/fetch/" + this.state.id)
@@ -41,12 +43,18 @@ class FutsalUpdate extends Component {
         axios.put("http://localhost:8080/futsal/update", this.state,this.state.config)
         .then((response)=>{
             console.log(response)
+            this.setState({ 
+                checkRegister: true
+            })
         })
         .catch((err)=>{
             console.log(err)
         })
     }
     render() {
+        if(this.state.checkRegister === true){
+            return <Redirect to='/Profile'/>
+        }
         return (
             <div class="container register">
                 <div class="row py-5 mt-4 align-items-center">

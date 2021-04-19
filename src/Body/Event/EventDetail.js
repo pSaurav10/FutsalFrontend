@@ -4,10 +4,13 @@ import axios from 'axios';
 class EventDetail extends Component {
   state = {
     events: [],
-    id: this.props.match.params.id
+    id: this.props.match.params.id,
+    config: {
+      headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+  }
   }
   componentDidMount() {
-    axios.get("http://localhost:8080/event/fetch/" + this.state.id)
+    axios.get("http://localhost:8080/event/fetch/" + this.state.id, this.state.config)
       .then((response) => {
         this.setState({
           events: [response.data.data]

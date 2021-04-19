@@ -2,13 +2,15 @@ import { Component, state, insertPost, postHandler } from "react";
 import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import ShowPost from './ShowPost';
+import {Redirect} from 'react-router-dom';
 
 class Community extends Component {
     state = {
         post: "",
         config : {
             headers : {'authorization': `Bearer ${localStorage.getItem('token')}`}
-        }
+        },
+        checkRegister: false
     }
     insertPost = (e) => {
         this.setState({
@@ -21,12 +23,18 @@ class Community extends Component {
         axios.post("http://localhost:8080/post/add", this.state,this.state.config)
         .then((response) => {
              console.log(response)
+             this.setState({ 
+                checkRegister: true
+            })
         })
         .catch((err) => {
              console.log(err)
         })
     }
     render() {
+        if(this.state.checkRegister === true){
+            return <Redirect to='/Community'/>
+        }
         return (
             <div class="container mt-4 mb-5 ">
                 <div class="d-flex justify-content-center row posts">

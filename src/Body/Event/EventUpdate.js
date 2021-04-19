@@ -1,5 +1,6 @@
 import { Component, state, inputHandler, eventUpdate } from "react";
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
 class EventUpdate extends Component {
     state = {
@@ -10,6 +11,7 @@ class EventUpdate extends Component {
         date: "",
         fee: "",
         id: this.props.match.params.id,
+        checkRegister: false,
         config:{
             headers: {'authorization': `Bearer ${localStorage.getItem('token')}`}
         }
@@ -41,12 +43,18 @@ class EventUpdate extends Component {
         axios.put("http://localhost:8080/event/update", this.state,this.state.config)
         .then((response)=>{
             console.log(response)
+            this.setState({ 
+                checkRegister: true
+            })
         })
         .catch((err)=>{
             console.log(err)
         })
     }
     render() {
+        if(this.state.checkRegister === true){
+            return <Redirect to='/profile'/>
+        }
         return (
             <div class="container register">
                 <div class="row py-5 mt-4 align-items-center">

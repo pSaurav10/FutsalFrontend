@@ -4,15 +4,18 @@ import axios from 'axios';
 
 class ShowPost extends Component {
     state = {
-        posts: []
+        posts: [],
+        config : {
+            headers : {'authorization': `Bearer ${localStorage.getItem('token')}`}
+        },
     }
     componentDidMount() {
-        axios.get("http://localhost:8080/post/fetch")
+        axios.get("http://localhost:8080/post/fetch", this.state.config)
             .then((response) => {
                 this.setState({
-                    posts: response.data.data
+                    posts: response.data.data.reverse()
                 })
-                console.log(response.data.data)
+                console.log(response)
             })
             .catch((err) => {
                 console.log(err.response)

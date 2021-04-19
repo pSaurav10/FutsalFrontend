@@ -1,5 +1,6 @@
 import { Component, state, inputHandler, fileHandler, futsalAdd } from "react";
 import axios from 'axios';
+import {Redirect} from 'react-router-dom';
 
 class FutsalRegister extends Component {
     state = {
@@ -14,7 +15,8 @@ class FutsalRegister extends Component {
         approve: false,
         config:{
             headers: {'authorization': `Bearer ${localStorage.getItem('token')}`}
-        }
+        },
+        checkRegister: false
     }
     inputHandler = (e) =>{
         this.setState({
@@ -42,12 +44,18 @@ class FutsalRegister extends Component {
         axios.post("http://localhost:8080/futsal/register", data,this.state.config)
         .then((response)=>{
             console.log(response)
+            this.setState({ 
+                checkRegister: true
+            })
         })
         .catch((err)=>{
             console.log(err)
         })
     }
     render() {
+        if(this.state.checkRegister === true){
+            return <Redirect to='/Futsal'/>
+        }
         return (
             <div class="container register">
                 <div class="row py-5 mt-4 align-items-center">

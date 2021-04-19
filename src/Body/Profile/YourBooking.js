@@ -11,7 +11,7 @@ class YourBooking extends Component {
         }
     }
     deleteBooking = (bid) => {
-        axios.delete('http://localhost:8080/futsal/delete/' + bid, this.state.config)
+        axios.delete('http://localhost:8080/futsalbook/delete/' + bid, this.state.config)
             .then((response) => {
                 console.log(response)
             })

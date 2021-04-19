@@ -4,13 +4,16 @@ import axios from 'axios';
 
 class Event extends Component {
     state = {
-        events: []
+        events: [],
+        config: {
+            headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+        }
     }
     componentDidMount() {
-        axios.get("http://localhost:8080/event/fetch")
+        axios.get("http://localhost:8080/event/fetch", this.state.config)
             .then((response) => {
                 this.setState({
-                    events: response.data.data
+                    events: response.data.data.reverse()
                 })
                 console.log(response.data.data)
             })
@@ -47,7 +50,6 @@ class Event extends Component {
                                                 <h4>{event.name}</h4>
                                                 <p>{event.location}</p>
                                                 <div class="portfolio-links">
-                                                    <a href={'http://localhost:8080/image/' + event.image} data-gall="portfolioGallery" class="venobox" title={event.name}><i class="bx bx-plus"></i></a>
                                                     <Link to={'/event/fetch/' + event._id}><i class="bx bx-link"></i></Link>
                                                 </div>
                                             </div>
