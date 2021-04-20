@@ -23,19 +23,19 @@ class EventDetail extends Component {
   }
   render() {
     return (
-      <section id="portfolio-details" class="portfolio-details single-detail">
+      <section id="portfolio-details" className="portfolio-details single-detail">
         {
           this.state.events.map((event) => {
             return (
-              <div class="container">
+              <div className="container">
 
-                <div class="portfolio-details-container" data-aos="fade-up" data-aos-delay="100">
+                <div className="portfolio-details-container" data-aos="fade-up" data-aos-delay="100">
 
-                  <div class="owl-carousel portfolio-details-carousel">
-                    <img src={'http://localhost:8080/image/' + event.image} class="img-fluid" alt="" />
+                  <div className="owl-carousel portfolio-details-carousel">
+                    <img src={'http://localhost:8080/image/' + event.image} className="img-fluid" alt="Event" />
                   </div>
 
-                  <div class="portfolio-info">
+                  <div className="portfolio-info">
                     <h3>Event information</h3>
                     <ul>
                       <li><strong>Name</strong>: {event.name}</li>
@@ -48,7 +48,7 @@ class EventDetail extends Component {
 
                 </div>
 
-                <div class="portfolio-description">
+                <div className="portfolio-description">
                   <h2>Description of {event.name}</h2>
                   <p>
                     {event.description}

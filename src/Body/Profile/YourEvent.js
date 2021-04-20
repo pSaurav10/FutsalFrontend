@@ -54,7 +54,7 @@ class YourEvent extends Component {
 
         }
         else {
-            var yourEvent =
+            yourEvent =
                 <div class="card-body">
                     <div className="row">
                         <div class="col-sm-12">

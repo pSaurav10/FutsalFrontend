@@ -1,5 +1,5 @@
 import { Component, state } from "react";
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Futsal extends Component {
@@ -24,33 +24,33 @@ class Futsal extends Component {
             window.location.href = '/login'
         }
         return (
-            <section id="portfolio" class="portfolio futsals">
-                <div class="container">
-                    <div class="row mb-3">
-                        <div class="col-lg-9 col-sm-12">
-                            <div class="section-title" data-aos="fade-left">
+            <section id="portfolio" className="portfolio futsals">
+                <div className="container">
+                    <div className="row mb-3">
+                        <div className="col-lg-9 col-sm-12">
+                            <div className="section-title" data-aos="fade-left">
                                 <h2>Futsal</h2>
                                 <p>Here, you can browse through all the futsals registered in our website. And you can book the futsal of your choice</p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-12">
-                            <a class="get-started" href="/futsal-register">Register your Futsal</a>
+                        <div className="col-lg-3 col-sm-12">
+                            <a className="get-started" href="/futsal-register">Register your Futsal</a>
                         </div>
                     </div>
 
-                    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                         {
                             this.state.futsals.map((futsal, i) => {
 
                                 return (
-                                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
-                                        <div class="portfolio-wrap">
-                                            <img src={'http://localhost:8080/image/' + futsal.image} class="img-fluid" alt="" />
-                                            <div class="portfolio-info">
+                                    <div className="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
+                                        <div className="portfolio-wrap">
+                                            <img src={'http://localhost:8080/image/' + futsal.image} className="img-fluid" alt="" />
+                                            <div className="portfolio-info">
                                                 <h4>{futsal.name}</h4>
                                                 <p>{futsal.address}</p>
-                                                <div class="portfolio-links">
-                                                    <Link to={'/futsal/fetch/' + futsal._id}><i class="bx bx-link"></i></Link>
+                                                <div className="portfolio-links">
+                                                    <Link to={'/futsal/fetch/' + futsal._id}><i className="bx bx-link"></i></Link>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,5 +1,4 @@
 import { Component, state, deleteBooking } from "react";
-import { Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Moment from 'react-moment';
 
@@ -54,7 +53,7 @@ class YourBooking extends Component {
 
         }
         else {
-            var yourBooking =
+            yourBooking =
                 <div class="card-body">
                     <div className="row">
                         <div class="col-sm-12">

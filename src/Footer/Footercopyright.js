@@ -3,11 +3,11 @@ import { Component } from "react";
 class Footercopyright extends Component {
     render() {
         return (
-            <div class="mr-md-auto text-center text-md-left">
-                <div class="copyright">
+            <div className="mr-md-auto text-center text-md-left">
+                <div className="copyright">
                     &copy; Copyright <strong><span>Futsal</span></strong>. All Rights Reserved
                 </div>
-                <div class="credits">
+                <div className="credits">
 
                     Designed by <a href="https://github.com/pSaurav10">Saurav</a>
                 </div>

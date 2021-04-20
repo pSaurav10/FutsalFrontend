@@ -3,12 +3,12 @@ class Whyus extends Component{
     
     render(){
         return(
-            <section id="why-us" class="why-us">
-      <div class="container">
+            <section id="why-us" className="why-us">
+      <div className="container">
 
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
-            <div class="content">
+        <div className="row">
+          <div className="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
+            <div className="content">
               <h3>Why Choose our website for Futsal and events?</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
@@ -16,26 +16,26 @@ class Whyus extends Component{
               </p>
             </div>
           </div>
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-football"></i>
+          <div className="col-lg-8 d-flex align-items-stretch">
+            <div className="icon-boxes d-flex flex-column justify-content-center">
+              <div className="row">
+                <div className="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                  <div className="icon-box mt-4 mt-xl-0">
+                    <i className="bx bx-football"></i>
                     <h4>Corporis voluptates sit</h4>
                     <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bxs-calendar-event"></i>
+                <div className="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+                  <div className="icon-box mt-4 mt-xl-0">
+                    <i className="bx bxs-calendar-event"></i>
                     <h4>Ullamco laboris ladore pan</h4>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
                   </div>
                 </div>
-                <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bxs-news"></i>
+                <div className="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+                  <div className="icon-box mt-4 mt-xl-0">
+                    <i className="bx bxs-news"></i>
                     <h4>Labore consequatur</h4>
                     <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
                   </div>

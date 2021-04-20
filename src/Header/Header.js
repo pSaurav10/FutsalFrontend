@@ -27,83 +27,83 @@ componentDidMount() {
   render() {
     if (localStorage.getItem('token') && localStorage.getItem('userType') === 'Admin'){
       var menu =
-        <ul class="navbar-nav ml-auto navbar-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/FutsalAdmin">FutsalAdmin</a>
+        <ul className="navbar-nav ml-auto navbar-center">
+          <li className="nav-item">
+            <a className="nav-link" href="/FutsalAdmin">FutsalAdmin</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/EventAdmin">EventsAdmin</a>
+          <li className="nav-item">
+            <a className="nav-link " href="/EventAdmin">EventsAdmin</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src={'http://localhost:8080/image/' + this.state.imagepp} width="30" height="30" class="rounded-circle" />
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#a" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src={'http://localhost:8080/image/' + this.state.imagepp} width="30" height="30" className="rounded-circle" alt="User Profile"/>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/profile">Profile</a>
-              <a class="dropdown-item " href="/" onClick={this.logout}>Log Out</a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a className="dropdown-item" href="/profile">Profile</a>
+              <a className="dropdown-item " href="/" onClick={this.logout}>Log Out</a>
             </div>
           </li>
         </ul>
     }
     else if (localStorage.getItem('token')){
-      var menu =
-        <ul class="navbar-nav ml-auto navbar-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+      menu =
+        <ul className="navbar-nav ml-auto navbar-center">
+          <li className="nav-item">
+            <a className="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Futsal">Futsal</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/Futsal">Futsal</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/Event">Events</a>
+          <li className="nav-item">
+            <a className="nav-link " href="/Event">Events</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/Community">Community</a>
+          <li className="nav-item">
+            <a className="nav-link " href="/Community">Community</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src={'http://localhost:8080/image/' + this.state.imagepp} width="30" height="30" class="rounded-circle" />
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#a" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src={'http://localhost:8080/image/' + this.state.imagepp} width="30" height="30" alt="User Profile" className="rounded-circle" />
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/profile">Profile</a>
-              <a class="dropdown-item " href="/" onClick={this.logout}>Log Out</a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a className="dropdown-item" href="/profile">Profile</a>
+              <a className="dropdown-item " href="/" onClick={this.logout}>Log Out</a>
             </div>
           </li>
         </ul>
     }
     else {
-      var menu =
-        <ul class="navbar-nav ml-auto navbar-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
+      menu =
+        <ul className="navbar-nav ml-auto navbar-center">
+          <li className="nav-item">
+            <a className="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Futsal">Futsal</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/Futsal">Futsal</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/Event">Events</a>
+          <li className="nav-item">
+            <a className="nav-link " href="/Event">Events</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/Community">Community</a>
+          <li className="nav-item">
+            <a className="nav-link " href="/Community">Community</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link get-started" href="/login">Login</a>
+          <li className="nav-item">
+            <a className="nav-link get-started" href="/login">Login</a>
           </li>
         </ul>
     }
     return (
-      <div class="navigationbar">
+      <div className="navigationbar">
 
-        <nav class="navbar navbar-expand-lg fixed-top text-center">
-          <div class="container">
-            <a class="navbar-brand" href="/">
+        <nav className="navbar navbar-expand-lg fixed-top text-center">
+          <div className="container">
+            <a className="navbar-brand" href="/">
               <img src="assets/img/futsallogo.png" height="50" alt="" />
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
-              <i class='bx bx-menu' style={{ color: "#009970" }}></i>
+              <i className='bx bx-menu' style={{ color: "#009970" }}></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
               {menu}
             </div>
           </div>

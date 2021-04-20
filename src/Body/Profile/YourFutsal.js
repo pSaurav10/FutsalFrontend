@@ -1,5 +1,5 @@
 import { Component, state, deleteFutsal } from "react";
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class YourFutsal extends Component {
@@ -54,7 +54,7 @@ class YourFutsal extends Component {
 
         }
         else {
-            var yourfutsal =
+             yourfutsal =
                 <div class="card-body">
                     <div className="row">
                         <div class="col-sm-12">

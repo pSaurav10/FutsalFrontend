@@ -36,45 +36,45 @@ class Login extends Component {
             return window.location.href = '/';
         }
         return (
-            <div class="container register">
-                <div class="row py-5 mt-4 align-items-center">
-                    <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
-                        <img src="assets/img/login.svg" alt="Register" class="img-fluid mb-3 d-none d-md-block" />
+            <div className="container register">
+                <div className="row py-5 mt-4 align-items-center">
+                    <div className="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                        <img src="assets/img/login.svg" alt="Register" className="img-fluid mb-3 d-none d-md-block" />
                         <h2>Login to your Account</h2>
                     </div>
 
-                    <div class="col-md-7 col-lg-6 ml-auto">
+                    <div className="col-md-7 col-lg-6 ml-auto">
                         <form action="#">
-                            <div class="row">
+                            <div className="row">
 
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class='bx bxs-user text-muted'></i>
+                                <div className="input-group col-lg-12 mb-4">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i className='bx bxs-user text-muted'></i>
                                         </span>
                                     </div>
                                     <input id="username" type="text" name="username" placeholder="User Name"
                                     value={this.state.username} onChange={this.loginUser} required
-                                    class="form-control bg-white border-left-0 border-md" />
+                                    className="form-control bg-white border-left-0 border-md" />
                                 </div>
 
-                                <div class="input-group col-lg-12 mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                        <i class='bx bxs-lock text-muted'></i>
+                                <div className="input-group col-lg-12 mb-4">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i className='bx bxs-lock text-muted'></i>
                                         </span>
                                     </div>
                                     <input id="password" type="password" name="password" placeholder="Password" 
                                     value={this.state.password} onChange={this.loginUser} required
-                                    class="form-control bg-white border-left-0 border-md" />
+                                    className="form-control bg-white border-left-0 border-md" />
                                 </div>
 
-                                <div class="form-group col-lg-12 mx-auto mb-0">
-                                    <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.loginhandler}>Login</button>
+                                <div className="form-group col-lg-12 mx-auto mb-0">
+                                    <button classNameName="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.loginhandler}>Login</button>
                                 </div>
 
-                                <div class="text-center w-100">
-                                    <p class="text-muted font-weight-bold">Not Registered? <a href="/register" class="text-primary ml-2">Register</a></p>
+                                <div className="text-center w-100">
+                                    <p className="text-muted font-weight-bold">Not Registered? <a href="/register" className="text-primary ml-2">Register</a></p>
                                 </div>
 
                             </div>

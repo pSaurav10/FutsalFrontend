@@ -1,6 +1,4 @@
-import { Component, state, state2, inputHandler, futsalBook, futsalUpdate } from "react";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import { Component, state, futsalUpdate } from "react";
 import axios from 'axios';
 
 class FutsalAdminDetail extends Component {
@@ -59,30 +57,30 @@ futsalUpdate = (e) => {
 
   render() {
     return (
-        <div class="container mt-5 mb-5">
-        <div class="d-flex justify-content-center row futsaladmindetail">
-                        <div class="col-md-12">
-                            <div class="row p-2 bg-white border rounded">
-                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src={'http://localhost:8080/image/' + this.state.image} /></div>
-                                <div class="col-md-6 mt-1">
+        <div className="container mt-5 mb-5">
+        <div className="d-flex justify-content-center row futsaladmindetail">
+                        <div className="col-md-12">
+                            <div className="row p-2 bg-white border rounded">
+                                <div className="col-md-3 mt-1"><img className="img-fluid img-responsive rounded product-image" src={'http://localhost:8080/image/' + this.state.image} alt="Futsal" /></div>
+                                <div className="col-md-6 mt-1">
                                     <h5>{this.state.name}</h5>
-                                    <div class="d-flex flex-row">
+                                    <div className="d-flex flex-row">
                                         <span>Address: {this.state.address}</span>
                                     </div>
-                                    <div class="d-flex flex-row">
+                                    <div className="d-flex flex-row">
                                         <span>Phone Number: {this.state.phoneNumber}</span>
                                     </div>
-                                    <div class="d-flex flex-row">
+                                    <div className="d-flex flex-row">
                                         <span>Grounds: {this.state.grounds}</span>
                                     </div>
-                                    <div class="d-flex flex-row">
+                                    <div className="d-flex flex-row">
                                         <span>Fee: {this.state.fee}</span>
                                     </div>
 
-                                    <p class="text-justify text-truncate para mb-0">{this.state.description}</p>
+                                    <p className="text-justify text-truncate para mb-0">{this.state.description}</p>
                                 </div>
-                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                                <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="submit" onClick={this.futsalUpdate}>Approve Futsal</button></div>
+                                <div className="align-items-center align-content-center col-md-3 border-left mt-1">
+                                <div className="d-flex flex-column mt-4"><button className="btn btn-primary btn-sm" type="submit" onClick={this.futsalUpdate}>Approve Futsal</button></div>
                                 </div>
                             </div>
                         </div>

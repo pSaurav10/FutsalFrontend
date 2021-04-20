@@ -12,9 +12,9 @@ class Footer extends Component {
         return (
             <footer id="footer">
 
-                <div class="footer-top">
-                    <div class="container">
-                        <div class="row">
+                <div className="footer-top">
+                    <div className="container">
+                        <div className="row">
 
                             <Footercontact></Footercontact>
 
@@ -28,7 +28,7 @@ class Footer extends Component {
                         </div>
                     </div>
                 </div>
-                <div class="container d-md-flex py-4">
+                <div className="container d-md-flex py-4">
 
                     <Footercopyright></Footercopyright>
                     <Footersocial></Footersocial>

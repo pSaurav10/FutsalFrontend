@@ -1,5 +1,5 @@
 import { Component, state } from "react";
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class Event extends Component {
@@ -27,34 +27,34 @@ class Event extends Component {
             window.location.href = '/login'
         }
         return (
-            <section id="portfolio" class="portfolio futsals">
-                <div class="container">
+            <section id="portfolio" className="portfolio futsals">
+                <div className="container">
 
-                    <div class="row mb-3">
-                        <div class="col-lg-9 col-sm-12">
-                            <div class="section-title" data-aos="fade-left">
+                    <div className="row mb-3">
+                        <div className="col-lg-9 col-sm-12">
+                            <div className="section-title" data-aos="fade-left">
                                 <h2>Event</h2>
                                 <p>Here, you can browse through all the events that are going to take place.</p>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-sm-12">
-                            <a class="get-started" href="/event-register">Register your Event</a>
+                        <div className="col-lg-3 col-sm-12">
+                            <a className="get-started" href="/event-register">Register your Event</a>
                         </div>
                     </div>
 
-                    <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                         {
                             this.state.events.map((event, i) => {
 
                                 return (
-                                    <div class="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
-                                        <div class="portfolio-wrap">
-                                            <img src={'http://localhost:8080/image/' + event.image} class="img-fluid" alt="" />
-                                            <div class="portfolio-info">
+                                    <div className="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
+                                        <div className="portfolio-wrap">
+                                            <img src={'http://localhost:8080/image/' + event.image} className="img-fluid" alt="Event" />
+                                            <div className="portfolio-info">
                                                 <h4>{event.name}</h4>
                                                 <p>{event.location}</p>
-                                                <div class="portfolio-links">
-                                                    <Link to={'/event/fetch/' + event._id}><i class="bx bx-link"></i></Link>
+                                                <div className="portfolio-links">
+                                                    <Link to={'/event/fetch/' + event._id}><i className="bx bx-link"></i></Link>
                                                 </div>
                                             </div>
                                         </div>

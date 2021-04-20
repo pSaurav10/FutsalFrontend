@@ -4,7 +4,7 @@ class Footercontact extends Component {
 
     render() {
         return (
-        <div class="col-lg-3 col-md-6 footer-contact">
+        <div className="col-lg-3 col-md-6 footer-contact">
             <h3>Futsal</h3>
             <p/>
               Jadibuti - 32, Narephate <br/>

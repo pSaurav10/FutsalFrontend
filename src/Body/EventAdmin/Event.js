@@ -27,11 +27,11 @@ class Event extends Component {
         }
         return (
             <div>
-                <section id="portfolio" class="portfolio futsals">
-                <div class="container">
-                    <div class="row mb-3">
-                        <div class="col-lg-9 col-sm-12">
-                            <div class="section-title" data-aos="fade-left">
+                <section id="portfolio" className="portfolio futsals">
+                <div className="container">
+                    <div className="row mb-3">
+                        <div className="col-lg-9 col-sm-12">
+                            <div className="section-title" data-aos="fade-left">
                                 <h2>Futsal</h2>
                                 <p>Here, you can browse through all the futsals and update the approval in their details page.</p>
                             </div>
@@ -39,17 +39,17 @@ class Event extends Component {
                     </div>  
                     </div>
                     </section>  
-            <div class="container mt-5 mb-5">
-                <div class="d-flex justify-content-center row futsaladmin">
+            <div className="container mt-5 mb-5">
+                <div className="d-flex justify-content-center row futsaladmin">
                     {
                         this.state.events.map((event, i) => {
                             return (
-                                <div class="col-md-5">
-                                    <div class="row p-2 bg-white border rounded">
-                                        <div class="col-md-4 mt-1"><img class="img-fluid img-responsive rounded product-image" src={'http://localhost:8080/image/' + event.image} /></div>
-                                        <div class="align-items-center align-content-center col-md-8 border-left mt-1"> 
+                                <div className="col-md-5">
+                                    <div className="row p-2 bg-white border rounded">
+                                        <div className="col-md-4 mt-1"><img className="img-fluid img-responsive rounded product-image" src={'http://localhost:8080/image/' + event.image} alt="Event"/></div>
+                                        <div className="align-items-center align-content-center col-md-8 border-left mt-1"> 
                                         <h5>{event.name}</h5>
-                                        <Link to={'/eventadmin/fetch/' + event._id}><i class="bx bx-link">Details</i></Link>
+                                        <Link to={'/eventadmin/fetch/' + event._id}><i className="bx bx-link">Details</i></Link>
                                         </div>
                                     </div>
                                 </div>
