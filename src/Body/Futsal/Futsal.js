@@ -12,7 +12,6 @@ class Futsal extends Component {
                 this.setState({
                     futsals: response.data.data.reverse()
                 })
-                console.log(response.data.data)
             })
             .catch((err) => {
                 console.log(err.response)
@@ -23,6 +22,33 @@ class Futsal extends Component {
         if(!token){
             window.location.href = '/login'
         }
+        var approved = []
+        for( var i = 0; i < this.state.futsals.length; i++){
+            
+            const approve = this.state.futsals[i].approve
+            if (approve === true){
+                approved.push( this.state.futsals[i])
+               
+            }
+        }
+        var futsals = approved.map((futsal, i) => {
+
+            return (
+                
+                <div className="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
+                    <div className="portfolio-wrap">
+                        <img src={'http://localhost:8080/image/' + futsal.image} className="img-fluid" alt="" />
+                        <div className="portfolio-info">
+                            <h4>{futsal.name}</h4>
+                            <p>{futsal.address}</p>
+                            <div className="portfolio-links">
+                                <Link to={'/futsal/fetch/' + futsal._id}><i className="bx bx-link"></i></Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
         return (
             <section id="portfolio" className="portfolio futsals">
                 <div className="container">
@@ -40,23 +66,7 @@ class Futsal extends Component {
 
                     <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                         {
-                            this.state.futsals.map((futsal, i) => {
-
-                                return (
-                                    <div className="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
-                                        <div className="portfolio-wrap">
-                                            <img src={'http://localhost:8080/image/' + futsal.image} className="img-fluid" alt="" />
-                                            <div className="portfolio-info">
-                                                <h4>{futsal.name}</h4>
-                                                <p>{futsal.address}</p>
-                                                <div className="portfolio-links">
-                                                    <Link to={'/futsal/fetch/' + futsal._id}><i className="bx bx-link"></i></Link>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })
+                            futsals
                         }
                     </div>
 

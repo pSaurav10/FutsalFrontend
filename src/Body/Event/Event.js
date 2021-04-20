@@ -15,7 +15,6 @@ class Event extends Component {
                 this.setState({
                     events: response.data.data.reverse()
                 })
-                console.log(response.data.data)
             })
             .catch((err) => {
                 console.log(err.response)
@@ -26,6 +25,32 @@ class Event extends Component {
         if(!token){
             window.location.href = '/login'
         }
+        var approved = []
+        for( var i = 0; i < this.state.events.length; i++){
+            
+            const approve = this.state.events[i].approve
+            if (approve === true){
+                approved.push( this.state.events[i])
+               
+            }
+        }
+        var events = approved.map((event, i) => {
+
+            return (
+                <div className="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
+                    <div className="portfolio-wrap">
+                        <img src={'http://localhost:8080/image/' + event.image} className="img-fluid" alt="Event" />
+                        <div className="portfolio-info">
+                            <h4>{event.name}</h4>
+                            <p>{event.location}</p>
+                            <div className="portfolio-links">
+                                <Link to={'/event/fetch/' + event._id}><i className="bx bx-link"></i></Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
         return (
             <section id="portfolio" className="portfolio futsals">
                 <div className="container">
@@ -44,23 +69,7 @@ class Event extends Component {
 
                     <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
                         {
-                            this.state.events.map((event, i) => {
-
-                                return (
-                                    <div className="col-lg-4 col-md-6 portfolio-item filter-app" key={i}>
-                                        <div className="portfolio-wrap">
-                                            <img src={'http://localhost:8080/image/' + event.image} className="img-fluid" alt="Event" />
-                                            <div className="portfolio-info">
-                                                <h4>{event.name}</h4>
-                                                <p>{event.location}</p>
-                                                <div className="portfolio-links">
-                                                    <Link to={'/event/fetch/' + event._id}><i className="bx bx-link"></i></Link>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            })
+                            events
                         }
                     </div>
 
