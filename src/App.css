@@ -106,7 +106,6 @@ color:white;
   background: #009970;
   color: #fff;
   border-radius: 50px;
-  margin: 0 15px;
   padding: 10px 25px;
 }
 .get-started:hover {
@@ -1339,3 +1338,4 @@ h5 {
 .para {
   font-size: 16px
 }
+

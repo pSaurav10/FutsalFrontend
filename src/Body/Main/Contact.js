@@ -56,12 +56,7 @@ class Contact extends Component {
                                     <textarea className="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                                     <div className="validate"></div>
                                 </div>
-                                <div className="mb-3">
-                                    <div className="loading">Loading</div>
-                                    <div className="error-message"></div>
-                                    <div className="sent-message">Your message has been sent. Thank you!</div>
-                                </div>
-                                <div className="text-center"><button type="submit">Send Message</button></div>
+                                <div className="text-center"><button className="get-started" type="submit">Send Message</button></div>
                         </div>
                     </div>
 

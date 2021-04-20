@@ -52,32 +52,32 @@ class SinglePost extends Component {
         return (
             <div>
 
-                <div className="container mt-4 mb-5 ">
-                    <div className="d-flex justify-content-center row posts">
-                        <div className="col-md-8">
-                            <div className="feed p-2">
-                                <div className="bg-white border mt-2 mb-2">
+                <div class="container mt-4 mb-5 ">
+                    <div class="d-flex justify-content-center row posts">
+                        <div class="col-md-8">
+                            <div class="feed p-2">
+                                <div class="bg-white border mt-2 mb-2">
                                     <div>
-                                        <div className="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
-                                            <div className="d-flex flex-row align-items-center feed-text px-2"><img className="rounded-circle" src={'http://localhost:8080/image/' + this.state.userimage} alt="Post User Profile" width="45" />
-                                                <div className="d-flex flex-column flex-wrap ml-2"><span className="font-weight-bold">{this.state.username}</span><span className="text-black-50 time">{this.state.createdAt}</span></div>
+                                        <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                                            <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src={'http://localhost:8080/image/' + this.state.userimage} alt="Post User Profile" width="45" />
+                                                <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">{this.state.username}</span><span class="text-black-50 time">{this.state.createdAt}</span></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div classNameName="row">
-                                        <div className="p-2 px-3 ml-4"><span>{this.state.post}</span></div>
+                                    <div className="row">
+                                        <div class="p-2 px-3 ml-4"><span>{this.state.post}</span></div>
 
                                     </div>
-                                    <div className="d-flex flex-row justify-content-between align-items-center p-2 bg-white border">
+                                    <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white border">
 
-                                        <div className="input-group col-lg-8 mb-4 mt-4">
+                                        <div class="input-group col-lg-8 mb-4 mt-4">
 
                                             <input id="comment" type="text" name="comment"
                                                 value={this.state.comment} onChange={this.inputHandler} required
-                                                placeholder="Write a comment" className="form-control bg-white border-0" />
+                                                placeholder="Write a comment" class="form-control bg-white border-0" />
                                         </div>
-                                        <div className="form-group col-lg-4 mx-auto mb-0">
-                                            <button classNameName="btn btn-md btn-primary btn-block text-uppercase" type="submit" onClick={this.commentAdd}>Comment</button>
+                                        <div class="form-group col-lg-4 mx-auto mb-0">
+                                            <button className="btn btn-md btn-primary btn-block text-uppercase" type="submit" onClick={this.commentAdd}>Comment</button>
                                         </div>
                                         
                                     </div>
@@ -87,17 +87,17 @@ class SinglePost extends Component {
                             this.state.comments.map((comment, i) => {
 
                                 return (
-                                <div className="bg-white border mt-2 mb-2">
+                                <div class="bg-white border mt-2 mb-2">
                                
                                     <div>
-                                        <div className="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
-                                            <div className="d-flex flex-row align-items-center feed-text px-2"><img className="rounded-circle" src={'http://localhost:8080/image/' + comment.cuserimage} alt="Comment User Profile" width="45" />
-                                                <div className="d-flex flex-column flex-wrap ml-2"><span className="font-weight-bold">{comment.cusername}</span><span className="text-black-50 time">{comment.ccreatedAt}</span></div>
+                                        <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                                            <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src={'http://localhost:8080/image/' + comment.cuserimage} alt="Comment User" width="45" />
+                                                <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">{comment.cusername}</span><span class="text-black-50 time">{comment.ccreatedAt}</span></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div classNameName="row">
-                                        <div className="p-2 px-3 ml-4"><span>{comment.comment}</span></div>
+                                    <div className="row">
+                                        <div class="p-2 px-3 ml-4"><span>{comment.comment}</span></div>
 
                                     </div>
                                     </div>

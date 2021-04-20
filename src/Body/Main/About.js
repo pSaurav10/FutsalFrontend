@@ -11,7 +11,7 @@ class About extends Component{
 
         <div className="row content">
           <div className="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
+            <h2>Futsal Website</h2>
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
           </div>
           <div className="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">

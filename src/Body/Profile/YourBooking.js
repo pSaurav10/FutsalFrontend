@@ -5,6 +5,7 @@ import Moment from 'react-moment';
 class YourBooking extends Component {
     state = {
         bookings: [],
+        checkDelete: false,
         config: {
             headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
         }
@@ -12,7 +13,9 @@ class YourBooking extends Component {
     deleteBooking = (bid) => {
         axios.delete('http://localhost:8080/futsalbook/delete/' + bid, this.state.config)
             .then((response) => {
-                console.log(response)
+                this.setState({
+                    checkDelete: true
+                })
             })
             .catch((err) => {
                 console.log(err.response)
@@ -33,11 +36,14 @@ class YourBooking extends Component {
             })
     }
     render() {
+        if(this.state.checkDelete === true){
+            window.location.href = '/profile'
+        }
         if (this.state.bookings) {
             var yourBooking =
                 this.state.bookings.map((booking, i) => {
                     return (
-                        <div class="card-body">
+                        <div class="col-md-6 card-body">
                             <div className="row">
                                 <div class="col-sm-12">
                                     <strong>{i + 1}. {booking.futsalname}</strong> booked for <Moment format="YYYY/MM/DD">{booking.date}</Moment>, {booking.time}

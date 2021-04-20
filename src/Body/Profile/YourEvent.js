@@ -5,6 +5,7 @@ import axios from 'axios';
 class YourEvent extends Component {
     state = {
         events: [],
+        checkUpdate: false,
         config: {
             headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
         }
@@ -12,7 +13,9 @@ class YourEvent extends Component {
     deleteEvent = (eid) => {
         axios.delete('http://localhost:8080/event/delete/' + eid, this.state.config)
             .then((response) => {
-                console.log(response)
+                this.setState({ 
+                checkUpdate: true
+            })
             })
             .catch((err) => {
                 console.log(err.response)
@@ -32,6 +35,10 @@ class YourEvent extends Component {
             })
     }
     render() {
+        if (this.state.checkUpdate === true)
+        {
+            window.location.href = './profile'
+        }
         if (this.state.events) {
             var yourEvent =
                 this.state.events.map((event, i) => {
