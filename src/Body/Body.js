@@ -17,6 +17,8 @@ import EventUpdate from './Event/EventUpdate';
 import ProfileUpdate from './Profile/ProfileUpdate';
 import FutsalAdmin from './FutsalAdmin/Futsal'
 import FutsalAdminDetail from './FutsalAdmin/FutsalAdminDetail';
+import EventAdmin from './EventAdmin/Event';
+import EventDetailAdmin from './EventAdmin/EventDetailAdmin';
 
 class Body extends Component {
     render() {
@@ -41,6 +43,9 @@ class Body extends Component {
 
                     <Route path="/FutsalAdmin" exact component={FutsalAdmin}></Route>
                     <Route path="/futsaladmin/fetch/:id" exact component={FutsalAdminDetail}></Route>
+
+                    <Route path="/EventAdmin" exact component={EventAdmin}></Route>
+                    <Route path="/eventadmin/fetch/:id" exact component={EventDetailAdmin}></Route>
                     
                 </div>
         )

@@ -1,62 +1,51 @@
-import { Component, state, state2, inputHandler, futsalBook, futsalUpdate } from "react";
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import { Component, state, eventUpdate } from "react";
 import axios from 'axios';
 
-class FutsalAdminDetail extends Component {
+class EventDetailAdmin extends Component {
   state = {
-    _id: "",
     name: "",
-    address: "",
-    phoneNumber: "",
     description: "",
     image: "",
-    grounds: "",
+    date: "",
     fee: "",
-    userid: "",
+    phone: "",
+    location: "",
+    id: this.props.match.params.id,
     approve: true,
-    futid: this.props.match.params.id,
     config: {
-        headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
-    }
-
+      headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
+  }
   }
   componentDidMount() {
-    axios.get("http://localhost:8080/futsal/fetch/" + this.state.futid)
+    axios.get("http://localhost:8080/event/fetch/" + this.state.id, this.state.config)
       .then((response) => {
         this.setState({
-            _id: response.data.data._id,
-          name: response.data.data.name,
-          address: response.data.data.address,
-          phoneNumber: response.data.data.phoneNumber,
-          description: response.data.data.description,
-          image: response.data.data.image,
-          grounds: response.data.data.grounds,
-          fee: response.data.data.fee,
+            name: response.data.data.name,
+            location: response.data.data.location,
+            phone: response.data.data.phone,
+            description: response.data.data.description,
+            image: response.data.data.image,
+            date: response.data.data.date,
+            fee: response.data.data.fee,
         })
       })
       .catch((err) => {
         console.log(err.response)
       })
   }
-
-futsalUpdate = (e) => {
+  eventUpdate = (e) =>{
     e.preventDefault();
 
-    axios.put("http://localhost:8080/futsaladmin/update", this.state, this.state.config)
-        .then((response) => {
-            console.log(response)
-            this.setState({
-                checkRegister: true
-            })
+    axios.put("http://localhost:8080/eventadmin/update", this.state,this.state.config)
+    .then((response)=>{
+        this.setState({ 
+            checkRegister: true
         })
-        .catch((err) => {
-            console.log(err)
-        })
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
 }
-  
-
-
   render() {
     return (
         <div class="container mt-5 mb-5">
@@ -82,7 +71,7 @@ futsalUpdate = (e) => {
                                     <p class="text-justify text-truncate para mb-0">{this.state.description}</p>
                                 </div>
                                 <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                                <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="submit" onClick={this.futsalUpdate}>Approve Futsal</button></div>
+                                <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="submit" onClick={this.eventUpdate}>Approve Event</button></div>
                                 </div>
                             </div>
                         </div>
@@ -91,6 +80,4 @@ futsalUpdate = (e) => {
     )
   }
 }
-export default FutsalAdminDetail;
-
-
+export default EventDetailAdmin;
