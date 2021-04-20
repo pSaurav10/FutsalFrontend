@@ -32,6 +32,10 @@ class Community extends Component {
         })
     }
     render() {
+        const token = localStorage.getItem('token')
+        if(!token){
+            window.location.href = '/login'
+        }
         if(this.state.checkRegister === true){
             return <Redirect to='/Community'/>
         }

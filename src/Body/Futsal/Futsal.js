@@ -19,6 +19,10 @@ class Futsal extends Component {
             })
     }
     render() {
+        const token = localStorage.getItem('token')
+        if(!token){
+            window.location.href = '/login'
+        }
         return (
             <section id="portfolio" class="portfolio futsals">
                 <div class="container">

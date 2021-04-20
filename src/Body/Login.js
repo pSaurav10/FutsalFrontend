@@ -24,6 +24,8 @@ class Login extends Component {
             })
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('userid', response.data.data._id)
+            localStorage.setItem('userType', response.data.userType.toString())
+            
         })
         .catch((error) => {
             console.log(error);

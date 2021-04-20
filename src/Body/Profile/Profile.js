@@ -1,18 +1,20 @@
 import { Component, state, insertPost, postHandler } from "react";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import YourFutsal from './YourFutsal';
 import YourEvent from './YourEvent';
 import YourBooking from './YourBooking';
 
 class Profile extends Component {
     state = {
+        _id: "",
         fname: "",
         lname: "",
         username: "",
         address: "",
         phone: "",
         email: "",
-        dob: "",
+        age: "",
         imagepp: "",
         config: {
             headers: { 'authorization': `Bearer ${localStorage.getItem('token')}` }
@@ -22,13 +24,14 @@ class Profile extends Component {
         axios.get("http://localhost:8080/profile", this.state.config)
             .then((response) => {
                 this.setState({
+                    _id: response.data.data._id,
                     fname: response.data.data.fname,
                     lname: response.data.data.lname,
                     username: response.data.data.username,
                     address: response.data.data.address,
                     phone: response.data.data.phone,
                     email: response.data.data.email,
-                    dob: response.data.data.dob,
+                    age: response.data.data.age,
                     imagepp: response.data.data.imagepp
                 })
             })
@@ -37,6 +40,10 @@ class Profile extends Component {
             })
     }
     render() {
+        const token = localStorage.getItem('token')
+        if(!token){
+            window.location.href = '/login'
+        }
         return (
 
             <div class="container profilee">
@@ -50,7 +57,7 @@ class Profile extends Component {
                                         <div class="mt-3">
                                             <h4>{this.state.username}</h4>
                                             <p class="text-secondary mb-1">Futsal Player</p>
-                                            <button class="btn btn-primary">Edit</button>
+                                            <Link class="get-button" to={'/profile/update'}>Edit Profile</Link>
                                         </div>
                                     </div>
                                 </div>
@@ -88,10 +95,10 @@ class Profile extends Component {
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">DOB</h6>
+                                            <h6 class="mb-0">Age</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary">
-                                            {this.state.dob}
+                                            {this.state.age}
                                         </div>
                                     </div>
                                     <hr />

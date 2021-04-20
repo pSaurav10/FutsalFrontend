@@ -42,7 +42,6 @@ class FutsalUpdate extends Component {
 
         axios.put("http://localhost:8080/futsal/update", this.state,this.state.config)
         .then((response)=>{
-            console.log(response)
             this.setState({ 
                 checkRegister: true
             })

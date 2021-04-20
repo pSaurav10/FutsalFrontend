@@ -42,7 +42,7 @@ class EventUpdate extends Component {
 
         axios.put("http://localhost:8080/event/update", this.state,this.state.config)
         .then((response)=>{
-            console.log(response)
+            console.log(this.state.fee)
             this.setState({ 
                 checkRegister: true
             })

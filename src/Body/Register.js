@@ -10,6 +10,7 @@ class Register extends Component {
         password: "",
         email: "",
         phone: "",
+        userType: "Player",
         checkRegister: false
     }
 

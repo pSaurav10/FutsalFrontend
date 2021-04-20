@@ -25,7 +25,27 @@ componentDidMount() {
     window.location.href = '/';
   }
   render() {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem('token') && localStorage.getItem('userType') === 'Admin'){
+      var menu =
+        <ul class="navbar-nav ml-auto navbar-center">
+          <li class="nav-item">
+            <a class="nav-link" href="/FutsalAdmin">FutsalAdmin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="/EventAdmin">EventsAdmin</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src={'http://localhost:8080/image/' + this.state.imagepp} width="30" height="30" class="rounded-circle" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/profile">Profile</a>
+              <a class="dropdown-item " href="/" onClick={this.logout}>Log Out</a>
+            </div>
+          </li>
+        </ul>
+    }
+    else if (localStorage.getItem('token')){
       var menu =
         <ul class="navbar-nav ml-auto navbar-center">
           <li class="nav-item">
